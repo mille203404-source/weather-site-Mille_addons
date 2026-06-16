@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER — already done for you!
+  ============================================================ -->
+  <header>
+    <h1>☁️ My Weather App</h1>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main>
+
+    <!-- Search bar -->
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter a city name..." />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Error message (hidden by default) -->
+    <p id="errorMsg" class="error hidden">City not found. Please try again!</p>
+
+    <!-- Weather card (hidden until a search is done) -->
+    <div id="weatherCard" class="weather-card hidden">
+      <h2 id="cityName">--</h2>
+      <p id="weatherDescription">--</p>
+      <div class="weather-details">
+        <div class="detail">
+          <span class="label">🌡️ Temperature</span>
+          <span id="temperature" class="value">--</span>
+        </div>
+        <div class="detail">
+          <span class="label">💧 Humidity</span>
+          <span id="humidity" class="value">--</span>
+        </div>
+        <div class="detail">
+          <span class="label">💨 Wind Speed</span>
+          <span id="windSpeed" class="value">--</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER — YOUR JOB: add a <footer> element below this comment
+       It should contain your name and the current year.
+       Style it in style.css!
+  ============================================================ -->
+
+
+
+  <!-- ============================================================
+       JAVASCRIPT — already wired up for you, don't touch this!
+  ============================================================ -->
+  <script>
+    // 🔑 Your API key from openweathermap.org
+    const API_KEY = "YOUR_API_KEY_HERE"; // ← Sign up at openweathermap.org/api and paste your key here
+
+    const searchBtn = document.getElementById("searchBtn");
+    const cityInput = document.getElementById("cityInput");
+
+    // When the button is clicked, run getWeather()
+    searchBtn.addEventListener("click", getWeather);
+
+    // Also allow pressing Enter in the input box
+    cityInput.addEventListener("keypress", function (e) {
+      if (e.key === "Enter") getWeather();
+    });
+
+    async function getWeather() {
+      const city = cityInput.value.trim();
+      if (!city) return; // Don't do anything if the input is empty
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.cod !== 200) {
+          showError();
+          return;
+        }
+
+        showWeather(data);
+
+      } catch (error) {
+        showError();
+      }
+    }
+
+    function showWeather(data) {
+      // Hide error, show card
+      document.getElementById("errorMsg").classList.add("hidden");
+      document.getElementById("weatherCard").classList.remove("hidden");
+
+      // Fill in the weather data
+      document.getElementById("cityName").textContent = data.name + ", " + data.sys.country;
+      document.getElementById("weatherDescription").textContent = data.weather[0].description;
+      document.getElementById("temperature").textContent = data.main.temp + " °C";
+      document.getElementById("humidity").textContent = data.main.humidity + " %";
+      document.getElementById("windSpeed").textContent = data.wind.speed + " m/s";
+    }
+
+    function showError() {
+      document.getElementById("weatherCard").classList.add("hidden");
+      document.getElementById("errorMsg").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+/* ================================================================
+   MY WEATHER APP — style.css
+   Your job: fill in the TODOs below to make the app look great!
+   The selectors and properties are already here — just add values.
+================================================================ */
+
+
+/* ----------------------------------------------------------------
+   1. GLOBAL STYLES
+   These apply to the whole page.
+---------------------------------------------------------------- */
+
+body {
+  /* TODO: Choose a background color for the whole page */
+  background-color: /* your color here */ ;
+
+  /* TODO: Choose a font for the text.
+     Tip: try one from https://fonts.google.com and add a <link> in index.html */
+  font-family: /* your font here */ ;
+
+  /* These are already done — they center everything on the page */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+/* ----------------------------------------------------------------
+   2. HEADER
+---------------------------------------------------------------- */
+
+header {
+  /* TODO: Give the header a background color */
+  background-color: /* your color here */ ;
+
+  /* TODO: Choose a text color that's easy to read on your background */
+  color: /* your color here */ ;
+
+  /* Already done */
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  /* TODO: Choose a font size for the title (e.g. 2rem) */
+  font-size: /* your size here */ ;
+
+  margin: 0;
+}
+
+
+/* ----------------------------------------------------------------
+   3. MAIN CONTENT AREA
+---------------------------------------------------------------- */
+
+main {
+  /* Already set up */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+
+/* ----------------------------------------------------------------
+   4. SEARCH BOX
+---------------------------------------------------------------- */
+
+.search-box {
+  /* Already done — puts input and button side by side */
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  /* TODO: Add a border (e.g. 2px solid #cccccc) */
+  border: /* your border here */ ;
+
+  /* TODO: Add some padding inside the input box (e.g. 10px) */
+  padding: /* your value here */ ;
+
+  /* TODO: Choose a border-radius to make the corners round (e.g. 8px) */
+  border-radius: /* your value here */ ;
+
+  /* Already done */
+  flex: 1;
+  font-size: 1rem;
+}
+
+.search-box button {
+  /* TODO: Choose a background color for the button */
+  background-color: /* your color here */ ;
+
+  /* TODO: Choose a text color */
+  color: /* your color here */ ;
+
+  /* TODO: Add some padding (e.g. 10px 20px) */
+  padding: /* your value here */ ;
+
+  /* TODO: Make the corners rounded */
+  border-radius: /* your value here */ ;
+
+  /* Already done */
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* This adds a hover effect when the mouse is over the button */
+.search-box button:hover {
+  /* TODO: Choose a slightly darker background color for hover */
+  background-color: /* your color here */ ;
+}
+
+
+/* ----------------------------------------------------------------
+   5. ERROR MESSAGE
+---------------------------------------------------------------- */
+
+.error {
+  /* TODO: Choose a color for error text — red is classic! */
+  color: /* your color here */ ;
+
+  font-weight: bold;
+}
+
+
+/* ----------------------------------------------------------------
+   6. WEATHER CARD
+---------------------------------------------------------------- */
+
+.weather-card {
+  /* TODO: Choose a background color for the card */
+  background-color: /* your color here */ ;
+
+  /* TODO: Add a border-radius to round the corners */
+  border-radius: /* your value here */ ;
+
+  /* TODO: Add some padding inside the card */
+  padding: /* your value here */ ;
+
+  /* Tip: Add a box-shadow to make the card pop!
+     Example: box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  box-shadow: /* your shadow here */ ;
+
+  /* Already done */
+  width: 100%;
+  text-align: center;
+}
+
+#cityName {
+  /* TODO: Choose a font size for the city name */
+  font-size: /* your size here */ ;
+
+  margin: 0 0 5px 0;
+}
+
+#weatherDescription {
+  /* TODO: Choose a color for the description text */
+  color: /* your color here */ ;
+
+  /* TODO: Make the first letter uppercase using text-transform */
+  text-transform: /* capitalize? uppercase? */ ;
+
+  margin: 0 0 20px 0;
+}
+
+.weather-details {
+  /* Already done — puts the 3 detail boxes in a row */
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.detail {
+  /* TODO: Give each detail box a background color */
+  background-color: /* your color here */ ;
+
+  /* TODO: Add padding and border-radius */
+  padding: /* your value here */ ;
+  border-radius: /* your value here */ ;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.label {
+  font-size: 0.8rem;
+  /* TODO: Choose a color for the label */
+  color: /* your color here */ ;
+}
+
+.value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  /* TODO: Choose a color for the value */
+  color: /* your color here */ ;
+  margin-top: 5px;
+}
+
+
+/* ----------------------------------------------------------------
+   7. HIDDEN UTILITY CLASS — already done, don't change this!
+---------------------------------------------------------------- */
+
+.hidden {
+  display: none;
+}
+
+
+/* ================================================================
+   8. FOOTER — YOUR TURN! 🎉
+   Add your footer styles below.
+   Your footer in index.html should have:
+     - Your name
+     - The current year
+   Style ideas:
+     - background-color
+     - color
+     - padding
+     - text-align
+     - font-size
+     - width: 100%  (so it stretches across the bottom)
+================================================================ */
+
+/* TODO: Write your footer CSS here */
